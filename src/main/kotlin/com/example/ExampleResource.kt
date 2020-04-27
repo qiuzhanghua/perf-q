@@ -1,11 +1,8 @@
 package com.example
 
 import io.smallrye.mutiny.Uni
-//import io.vertx.mutiny.core.Vertx
 import io.vertx.mutiny.core.Vertx
 import io.vertx.mutiny.redis.RedisClient
-import io.vertx.mutiny.redis.client.Redis
-import io.vertx.mutiny.redis.client.RedisAPI
 import javax.annotation.PostConstruct
 import javax.inject.Inject
 import javax.ws.rs.GET
@@ -33,7 +30,7 @@ class ExampleResource {
 //        println(vertx)
 //        var redis = Redis.createClient(vertx!!)
 //        var api = RedisAPI.api(redis!!);
-        return client!!.get("key").onItem().apply{ r -> javax.ws.rs.core.Response.ok(r).build() }
+        return client!!.get("key").onItem().apply{ r -> Response.ok(r).build() }
 //        "hello"
     }
 }
