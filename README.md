@@ -33,3 +33,6 @@ Running 30s test @ http://localhost:8080/hello
 Requests/sec:  27227.83
 Transfer/sec:      2.16MB
 ```
+
+## See also
+<https://quarkus.io/guides/getting-started-reactive>
