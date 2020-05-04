@@ -15,13 +15,13 @@ import javax.ws.rs.core.Response
 class ExampleResource {
 
     @Inject
-    var vertx: Vertx? = null
+    lateinit var vertx: Vertx
 
-    var client:RedisClient? = null
+    lateinit var client: RedisClient
 
     @PostConstruct
     fun init() {
-       this.client = RedisClient.create(vertx)
+        this.client = RedisClient.create(vertx)
     }
 
     @GET
@@ -30,7 +30,7 @@ class ExampleResource {
 //        println(vertx)
 //        var redis = Redis.createClient(vertx!!)
 //        var api = RedisAPI.api(redis!!);
-        return client!!.get("key").onItem().apply{ r -> Response.ok(r).build() }
+        return client.get("key").onItem().apply { r -> Response.ok(r).build() }
 //        "hello"
     }
 }
