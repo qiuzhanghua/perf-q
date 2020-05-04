@@ -33,6 +33,16 @@ Running 30s test @ http://localhost:8080/hello
 Requests/sec:  27227.83
 Transfer/sec:      2.16MB
 ```
-
+### Redis(6.0)
+```text
+➜  ~ wrk -t12 -c100 -d30s http://localhost:8080/hello
+Running 30s test @ http://localhost:8080/hello
+  12 threads and 100 connections
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency     1.47ms  217.42us   5.70ms   73.11%
+    Req/Sec     5.45k   434.11     7.26k    70.71%
+  1958701 requests in 30.10s, 171.85MB read
+Requests/sec:  65072.61
+```
 ## See also
 <https://quarkus.io/guides/getting-started-reactive>
