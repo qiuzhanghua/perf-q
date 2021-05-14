@@ -30,7 +30,7 @@ class ExampleResource {
 //        println(vertx)
 //        var redis = Redis.createClient(vertx!!)
 //        var api = RedisAPI.api(redis!!);
-        return client.get("key").onItem().apply { r -> Response.ok(r).build() }
+        return client.get("key").onItem().transform { r -> Response.ok(r).build() }
 //        "hello"
     }
 }
